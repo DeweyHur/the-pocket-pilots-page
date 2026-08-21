@@ -6,15 +6,14 @@ overridden from the linked Google Sheet.
 
 ## Google Sheet data source
 
-The page reads the first tab from the configured Google Sheet as CSV. To enable
-live sync, set the sheet to `Anyone with the link` (Viewer) or publish the tab
-to the web. Keep the first row as headers and use rows like these:
+The page reads the published CSV for the first tab from the configured Google
+Sheet. Keep the first row as headers and use rows like these:
 
 | Type | Name | Role | Title | Link | Date | Time | Location | Pay Link |
 | --- | --- | --- | --- | --- | --- | --- | --- | --- |
 | member | Lee | Guitar | | | | | | |
 | member | Dewey | Bass | | | | | | |
-| member | Harry | Drums | | | | | | |
+| member | Harry | Drum | | | | | | |
 | song | | | Fox Chick and a Cool Cat | YouTube URL | | | | |
 | event | | | | | September 1, 2026 | 8:00–10:00 PM | 422 S Western Ave, Los Angeles, CA 90020 | Venmo URL |
 

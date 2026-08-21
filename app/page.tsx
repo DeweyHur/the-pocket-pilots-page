@@ -30,7 +30,8 @@ type SheetRow = Record<string, string>;
 const SHEET_ID = "1hb3RNe1QZRfb22GG2IQVEV09-EK4v_VQbiydUPR3FPQ";
 const SHEET_GID = "0";
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${SHEET_GID}#gid=${SHEET_GID}`;
-const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+const SHEET_CSV_URL =
+  "https://docs.google.com/spreadsheets/d/e/2PACX-1vQCnyDiFBqRdZaFd_Jf-8QRZ-mpvO7gVuW4lq2VIIuYcdZbfDNtMgQm1C75Ru5uPqO5exmjwqmicVGY/pub?output=csv&gid=0&single=true";
 const SHEET_GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${SHEET_GID}`;
 
 const FALLBACK_PLAN: BandPlan = {
