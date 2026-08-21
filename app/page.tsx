@@ -38,7 +38,7 @@ const FALLBACK_PLAN: BandPlan = {
   members: [
     { name: "Lee", role: "Guitar" },
     { name: "Dewey", role: "Bass" },
-    { name: "Harry", role: "Drums" },
+    { name: "Harry", role: "Drum" },
   ],
   songs: [
     {
