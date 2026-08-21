@@ -21,6 +21,16 @@ to the web. Keep the first row as headers and use rows like these:
 If the sheet is unavailable or has not been formatted yet, the page keeps the
 seeded rehearsal plan visible and labels the source as `Using saved plan`.
 
+## GitHub Pages
+
+The repository deploys to GitHub Pages from `main` through
+`.github/workflows/deploy-pages.yml`. The public site URL is:
+
+<https://deweyhur.github.io/the-pocket-pilots-page/>
+
+Run `npm run build` followed by `npm run build:pages` to create the same static
+bundle locally.
+
 ## Prerequisites
 
 - Node.js `>=22.13.0`
