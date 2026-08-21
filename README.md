@@ -18,8 +18,9 @@ to the web. Keep the first row as headers and use rows like these:
 | song | | | Fox Chick and a Cool Cat | YouTube URL | | | | |
 | event | | | | | September 1, 2026 | 8:00–10:00 PM | 422 S Western Ave, Los Angeles, CA 90020 | Venmo URL |
 
-If the sheet is unavailable or has not been formatted yet, the page keeps the
-seeded rehearsal plan visible and labels the source as `Using saved plan`.
+If the sheet is unavailable, empty, or has not been formatted yet, the page
+keeps the seeded rehearsal plan visible and shows the sheet status in the
+source-of-truth panel.
 
 ## GitHub Pages
 

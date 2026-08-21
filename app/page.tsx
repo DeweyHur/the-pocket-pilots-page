@@ -31,6 +31,7 @@ const SHEET_ID = "1hb3RNe1QZRfb22GG2IQVEV09-EK4v_VQbiydUPR3FPQ";
 const SHEET_GID = "0";
 const SHEET_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/edit?gid=${SHEET_GID}#gid=${SHEET_GID}`;
 const SHEET_CSV_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/export?format=csv&gid=${SHEET_GID}`;
+const SHEET_GVIZ_URL = `https://docs.google.com/spreadsheets/d/${SHEET_ID}/gviz/tq?tqx=out:json&gid=${SHEET_GID}`;
 
 const FALLBACK_PLAN: BandPlan = {
   members: [
@@ -110,6 +111,29 @@ function parseCsv(csv: string): SheetRow[] {
   );
 }
 
+function parseGviz(text: string): SheetRow[] {
+  try {
+    const responseStart = text.indexOf("setResponse(");
+    const jsonStart = text.indexOf("{", responseStart);
+    const jsonEnd = text.lastIndexOf(")");
+    if (responseStart < 0 || jsonStart < 0 || jsonEnd <= jsonStart) return [];
+
+    const payload = JSON.parse(text.slice(jsonStart, jsonEnd));
+    const columns = payload.table?.cols ?? [];
+    const headers = columns.map((column: { id?: string; label?: string }, index: number) =>
+      normalize(column.label || column.id || `column${index + 1}`),
+    );
+
+    return (payload.table?.rows ?? []).map((row: { c?: Array<{ v?: unknown } | null> }) =>
+      Object.fromEntries(
+        headers.map((header: string, index: number) => [header, String(row.c?.[index]?.v ?? "")]),
+      ),
+    );
+  } catch {
+    return [];
+  }
+}
+
 function first(row: SheetRow | undefined, ...keys: string[]) {
   if (!row) return "";
   for (const key of keys) {
@@ -183,29 +207,44 @@ function mapLink(location: string) {
   return `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(location)}`;
 }
 
+async function fetchSheetRows(signal: AbortSignal) {
+  const csvResponse = await fetch(SHEET_CSV_URL, { signal });
+  if (!csvResponse.ok) throw new Error(`CSV export returned ${csvResponse.status}`);
+  const csvRows = parseCsv(await csvResponse.text());
+  if (csvRows.length) return csvRows;
+
+  try {
+    const gvizResponse = await fetch(SHEET_GVIZ_URL, { signal });
+    if (gvizResponse.ok) {
+      const gvizRows = parseGviz(await gvizResponse.text());
+      if (gvizRows.length) return gvizRows;
+    }
+  } catch {
+    // The CSV export is the primary public endpoint; gviz is best-effort.
+  }
+
+  return [];
+}
+
 export default function Home() {
   const [plan, setPlan] = useState(FALLBACK_PLAN);
-  const [syncState, setSyncState] = useState<"syncing" | "live" | "fallback">("syncing");
+  const [syncState, setSyncState] = useState<"syncing" | "live" | "empty" | "unavailable">("syncing");
   const dateParts = useMemo(() => formatDate(plan.rehearsal.date), [plan.rehearsal.date]);
 
   useEffect(() => {
     const controller = new AbortController();
 
-    fetch(SHEET_CSV_URL, { signal: controller.signal })
-      .then((response) => {
-        if (!response.ok) throw new Error(`Sheet returned ${response.status}`);
-        return response.text();
-      })
-      .then((csv) => {
-        const nextPlan = planFromRows(parseCsv(csv));
+    fetchSheetRows(controller.signal)
+      .then((rows) => {
+        const nextPlan = planFromRows(rows);
         if (nextPlan) {
           setPlan(nextPlan);
           setSyncState("live");
         } else {
-          setSyncState("fallback");
+          setSyncState("empty");
         }
       })
-      .catch(() => setSyncState("fallback"));
+      .catch(() => setSyncState("unavailable"));
 
     return () => controller.abort();
   }, []);
@@ -342,7 +381,13 @@ export default function Home() {
         </div>
         <div className={`sync-status sync-${syncState}`}>
           <span className="status-dot" />
-          {syncState === "live" ? "Live sync" : syncState === "syncing" ? "Checking sheet" : "Using saved plan"}
+          {syncState === "live"
+            ? "Live sync"
+            : syncState === "syncing"
+              ? "Checking sheet"
+              : syncState === "empty"
+                ? "Sheet is empty"
+                : "Using saved plan"}
         </div>
         <a className="button button-light" href={SHEET_URL} target="_blank" rel="noreferrer">Edit the sheet <span aria-hidden="true">↗</span></a>
       </section>
