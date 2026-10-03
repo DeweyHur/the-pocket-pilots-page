@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Foxy Chick and a Cool Cat – Song Form</title>
+<style>
+:root { --bg:#e9efe6; --ink:#16241a; --muted:#566a5b; --edge:#c4d1c1; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a13; --ink:#e6efe3; --muted:#93a79a; --edge:#2a3b2f; } }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+main { max-width:1040px; margin:0 auto; padding:24px 16px 48px; }
+h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:-0.01em; }
+.sub { margin:2px 0 18px; color:var(--muted); }
+.songform { padding:22px 20px; border:1px solid var(--edge); border-radius:4px; }
+h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05rem; }
+.sf-meta { margin:0; color:var(--muted); font-size:.85rem; }
+.sf-sub { font-weight:400; font-size:.85rem; color:var(--muted); }
+.sf-summary { margin:14px 0; font-size:1.1rem; font-weight:700; }
+.sf-strip { display:flex; gap:2px; margin:0 0 14px; }
+.sf-seg { min-width:0; padding:6px 4px; text-align:center; font-size:.72rem; border-radius:3px; overflow:hidden; white-space:nowrap; color:#fff; }
+.sf-seg b { display:block; font-size:.74rem; text-overflow:ellipsis; overflow:hidden; }
+.sf-intro { background:#6b7d70; } .sf-head { background:#2f7d4f; }
+.sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
+.sf-scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.86rem; }
+th,td { padding:5px 8px; border-bottom:1px solid var(--edge); text-align:left; vertical-align:top; }
+th { color:var(--muted); font-weight:600; white-space:nowrap; }
+td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.sf-table td:nth-child(5) { white-space:nowrap; font-weight:600; }
+.grid { display:grid; grid-template-columns:44px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:800; font-size:1.05rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; justify-content:space-around; align-items:center; min-height:2.6em; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(.95rem,2.4vw,1.6rem); font-weight:700; white-space:nowrap; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+@media (max-width:600px) { .grid { grid-template-columns:36px repeat(2,1fr); } .gb { font-size:1.05rem; } .gl { grid-row:span 2; font-size:.9rem; } .gb:nth-child(5n) { border-right:0; } }
+.note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A Foxy Chick and a Cool Cat</h1>
+  <p class="sub">Key of F · 32-bar main form (A A B A)</p>
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Reference recording: “A Foxy Chick and a Cool Cat” · Timestamps and bar counts come from audio analysis.</p>
+    <p class="sf-summary">Intro 34 – Main ×3 – Outro <span class="sf-sub">(Main = A1 A2 B A3, 32 bars; outro = intro)</span></p>
+    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:34"><b>Intro</b><span>34</span></div><div class="sf-seg sf-head" style="flex:32"><b>Main 1</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Main 2</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Main 3</b><span>32</span></div><div class="sf-seg sf-intro" style="flex:33"><b>Outro</b><span>33</span></div></div>
+    <ul class="sf-facts">
+      <li><b>Tempo</b> ♩≈121, played live (drifts between about 119 and 125). 1 bar ≈ 2.0 s.</li>
+      <li><b>Main</b> 32 bars × 3 = 96 bars, no added or dropped bars.</li>
+      <li><b>Intro / Outro</b> the same 32 bars. The intro adds a 2-bar turnaround into the main section; the outro goes to a held final chord instead.</li>
+    </ul>
+    <div class="sf-scroll">
+    <table class="sf-table">
+      <thead><tr><th>Start</th><th>End</th><th>Bars</th><th>Count</th><th>Label</th><th>Notes</th></tr></thead>
+      <tbody>
+      <tr><td class="num">0:00.3</td><td class="num">1:04.1</td><td class="num">1–32</td><td class="num">32</td><td>Intro</td><td>32 bars, four 8-bar phrases, quiet</td></tr>
+<tr><td class="num">1:04.1</td><td class="num">1:08.2</td><td class="num">33–34</td><td class="num">2</td><td>Intro · turnaround</td><td>G7 | C-7 leading into the main section</td></tr>
+<tr><td class="num">1:08.2</td><td class="num">1:24.1</td><td class="num">35–42</td><td class="num">8</td><td>Main 1 · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">1:24.1</td><td class="num">1:40.0</td><td class="num">43–50</td><td class="num">8</td><td>Main 1 · A2</td><td></td></tr>
+<tr><td class="num">1:40.0</td><td class="num">1:55.9</td><td class="num">51–58</td><td class="num">8</td><td>Main 1 · B</td><td></td></tr>
+<tr><td class="num">1:55.9</td><td class="num">2:11.8</td><td class="num">59–66</td><td class="num">8</td><td>Main 1 · A3</td><td></td></tr>
+<tr><td class="num">2:11.8</td><td class="num">2:27.8</td><td class="num">67–74</td><td class="num">8</td><td>Main 2 · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">2:27.8</td><td class="num">2:43.5</td><td class="num">75–82</td><td class="num">8</td><td>Main 2 · A2</td><td></td></tr>
+<tr><td class="num">2:43.5</td><td class="num">2:59.4</td><td class="num">83–90</td><td class="num">8</td><td>Main 2 · B</td><td></td></tr>
+<tr><td class="num">2:59.4</td><td class="num">3:15.1</td><td class="num">91–98</td><td class="num">8</td><td>Main 2 · A3</td><td></td></tr>
+<tr><td class="num">3:15.1</td><td class="num">3:30.5</td><td class="num">99–106</td><td class="num">8</td><td>Main 3 · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">3:30.5</td><td class="num">3:45.9</td><td class="num">107–114</td><td class="num">8</td><td>Main 3 · A2</td><td></td></tr>
+<tr><td class="num">3:45.9</td><td class="num">4:01.5</td><td class="num">115–122</td><td class="num">8</td><td>Main 3 · B</td><td></td></tr>
+<tr><td class="num">4:01.5</td><td class="num">4:17.1</td><td class="num">123–130</td><td class="num">8</td><td>Main 3 · A3</td><td></td></tr>
+<tr><td class="num">4:17.1</td><td class="num">5:20.1</td><td class="num">131–162</td><td class="num">32</td><td>Outro</td><td>Same 32 bars as the intro</td></tr>
+<tr><td class="num">5:20.1</td><td class="num">≈5:22</td><td class="num">163–</td><td class="num">–</td><td>Final chord</td><td>Held after the G♭7 bar, then fades</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3>Main · bar by bar</h3>
+    <div class="grid"><div class="gl">A1</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>B♭7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>G-7</span></div><div class="gb"><span>C7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>G7</span><span>C7</span></div><div class="gl">A2</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>B♭7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>G7</span></div><div class="gb"><span>C7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>%</span></div><div class="gl">B</div><div class="gb"><span>B♭Δ7</span></div><div class="gb"><span>E♭7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>B♭-7</span></div><div class="gb"><span>E♭7</span><span>D7</span></div><div class="gb"><span>A7</span><span>D7</span></div><div class="gb"><span>G7</span><span>C7</span></div><div class="gl">A3</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>B♭7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>G-7</span><span>G7</span></div><div class="gb"><span>C7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>G7</span><span>C7</span></div></div>
+    <h3>Intro / Outro · bar by bar</h3>
+    <div class="grid"><div class="gl">1</div><div class="gb"><span>FΔ7</span><span>C7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>B♭Δ7</span></div><div class="gb"><span>B♭7</span></div><div class="gl"></div><div class="gb"><span>B♭-7</span><span>E♭7</span></div><div class="gb"><span>A♭</span><span>A♭7</span><span>C7</span></div><div class="gb"><span>B♭</span></div><div class="gb"><span>%</span></div><div class="gl">2</div><div class="gb"><span>FΔ7</span><span>F7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>B♭Δ7</span></div><div class="gb"><span>B♭7</span></div><div class="gl"></div><div class="gb"><span>B♭-7</span><span>E♭7</span></div><div class="gb"><span>A♭7</span><span>C7</span></div><div class="gb"><span>B♭</span></div><div class="gb"><span>F7</span></div><div class="gl">3</div><div class="gb"><span>B♭-7</span></div><div class="gb"><span>E♭7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>B♭-7</span></div><div class="gb"><span>E♭7</span></div><div class="gb"><span>D♭7</span></div><div class="gb"><span>C7</span></div><div class="gl">4</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>B♭Δ7</span></div><div class="gb"><span>B♭7</span></div><div class="gl"></div><div class="gb"><span>B♭-7</span><span>E♭7</span></div><div class="gb"><span>A♭7</span></div><div class="gb"><span>F7</span></div><div class="gb"><span>G♭7</span></div><div class="gl">Turn</div><div class="gb"><span>G7</span></div><div class="gb"><span>C-7</span></div></div>
+    <p class="note">Chords follow the band's chord chart. “Turn” is played after the intro only. Bar numbers count from the start of the recording; timestamps are accurate to roughly ±0.2 s.</p>
+  </section>
+</main>
+</body>
+</html>

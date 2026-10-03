@@ -70,6 +70,7 @@ const FALLBACK_PLAN: BandPlan = {
 const SONG_FORMS = [
   { match: /green hill zone/i, href: "./green-hill-zone.html", label: "Lead sheet & song form" },
   { match: /pennies from heaven/i, href: "./pennies-from-heaven.html", label: "Song form" },
+  { match: /fox.*chick/i, href: "./foxy-chick-and-a-cool-cat.html", label: "Song form" },
 ];
 
 function songForm(title: string) {
