@@ -67,6 +67,15 @@ const FALLBACK_PLAN: BandPlan = {
   },
 };
 
+const SONG_FORMS = [
+  { match: /green hill zone/i, href: "./green-hill-zone.html", label: "Lead sheet & song form" },
+  { match: /pennies from heaven/i, href: "./pennies-from-heaven.html", label: "Song form" },
+];
+
+function songForm(title: string) {
+  return SONG_FORMS.find((entry) => entry.match.test(title));
+}
+
 function normalize(value: string | undefined) {
   return (value ?? "").trim().toLowerCase().replace(/[\s_-]+/g, "");
 }
@@ -335,9 +344,9 @@ export default function Home() {
               <article className="song-row" key={song.title}>
                 <span className="song-number">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{song.title}</h3>
-                {/green hill zone/i.test(song.title) ? (
-                  <a className="song-type song-form-link" href="./green-hill-zone.html" target="_blank" rel="noreferrer">
-                    Lead sheet &amp; song form <span aria-hidden="true">↗</span>
+                {songForm(song.title) ? (
+                  <a className="song-type song-form-link" href={songForm(song.title)?.href} target="_blank" rel="noreferrer">
+                    {songForm(song.title)?.label} <span aria-hidden="true">↗</span>
                   </a>
                 ) : (
                   <span className="song-type">Reference track</span>
