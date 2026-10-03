@@ -27,6 +27,11 @@ th,td { padding:5px 8px; border-bottom:1px solid var(--edge); text-align:left; v
 th { color:var(--muted); font-weight:600; white-space:nowrap; }
 td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
 .sf-table td:nth-child(4) { white-space:nowrap; font-weight:600; }
+.grid { display:grid; grid-template-columns:34px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:700; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; justify-content:space-around; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:1.05rem; font-weight:600; white-space:nowrap; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+@media (max-width:600px) { .gb { font-size:.8rem; padding:10px 2px; } }
 .note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
 </style>
 </head>
@@ -69,13 +74,8 @@ td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
       </tbody>
     </table>
     </div>
-    <h3>Changes (from the chart)</h3>
-    <div class="sf-scroll">
-    <table>
-      <thead><tr><th>Section</th><th>Bars</th><th>Chords</th></tr></thead>
-      <tbody><tr><td>A1</td><td class="num">8</td><td>C6 D-7 | E-7 E♭°7 | D-7 | G7 ×2</td></tr><tr><td>B</td><td class="num">8</td><td>C7 | C7 | FΔ7 | FΔ7 | D7 | D7 | G7 | G7</td></tr><tr><td>A2</td><td class="num">8</td><td>C6 D-7 | E-7 E♭°7 | D-7 | G7 | C6 | G-7 C7 | FΔ7 | FΔ7</td></tr><tr><td>C</td><td class="num">8</td><td>FΔ7 | B♭7♯11 | CΔ7 | A7 | D-7 | D7 G7 | C6 | (D-7 G7)</td></tr></tbody>
-    </table>
-    </div>
+    <h3>Chord chart</h3>
+    <div class="grid"><div class="gl">A1</div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl"></div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl">B</div><div class="gb"><span>C7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>D7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>G7</span></div><div class="gb"><span>%</span></div><div class="gl">A2</div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl"></div><div class="gb"><span>C6</span></div><div class="gb"><span>G-7</span><span>C7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gl">C</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>B♭7♯11</span></div><div class="gb"><span>CΔ7</span></div><div class="gb"><span>A7</span></div><div class="gl"></div><div class="gb"><span>D-7</span></div><div class="gb"><span>D7</span><span>G7</span></div><div class="gb"><span>C6</span></div><div class="gb"><span>(D-7</span><span>G7)</span></div></div>
     <p class="note">Bar numbers count from the start of the recording. Because the tempo is not fixed, timestamps are accurate to roughly ±0.2 s.</p>
   </section>
 </main>
