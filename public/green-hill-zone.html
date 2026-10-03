@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Green Hill Zone – VexFlow</title>
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #e9efe6;
+  --ink: #16241a;
+  --muted: #566a5b;
+  --paper: #ffffff;
+  --paper-ink: #000000;
+  --edge: #c4d1c1;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #101a13; --ink: #e6efe3; --muted: #93a79a; --edge: #2a3b2f;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #101a13; --ink: #e6efe3; --muted: #93a79a; --edge: #2a3b2f;
+}
+html { scroll-padding-top: env(safe-area-inset-top, 0px); }
+body {
+  margin: 0; background: var(--bg); color: var(--ink);
+  font-family: "Trebuchet MS", "Segoe UI", Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+}
+main { max-width: 1040px; margin: 0 auto; padding: 24px 16px 48px; }
+.paper {
+  background: var(--paper); color: var(--paper-ink);
+  border: 1px solid var(--edge); border-radius: 4px;
+  padding: 28px 24px 20px;
+}
+header { text-align: center; margin-bottom: 4px; }
+h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-spacing: -0.01em; }
+.sub { margin: 2px 0 0; font-size: 1.05rem; }
+.credits { text-align: right; font-size: 0.85rem; margin: 6px 0 0; line-height: 1.4; }
+.sys { width: 100%; }
+.sys svg { display: block; width: 100% !important; max-width: 100%; height: auto !important; }
+@media (max-width: 700px) {
+  .sys { overflow-x: auto; }
+  .sys svg { min-width: 640px; }
+}
+.note { color: var(--muted); font-size: 0.85rem; margin: 14px 4px 0; }
+</style>
+<style>
+/* ---- Song Form section (added) ---- */
+.songform { margin-top: 28px; padding: 22px 20px; border: 1px solid var(--edge); border-radius: 4px; }
+.songform h2 { margin: 0 0 4px; font-size: 1.5rem; }
+.songform h3 { margin: 26px 0 8px; font-size: 1.05rem; }
+.sf-meta { margin: 0; color: var(--muted); font-size: 0.85rem; }
+.sf-sub { font-weight: 400; font-size: 0.85rem; color: var(--muted); }
+.sf-summary { margin: 14px 0; font-size: 1.1rem; font-weight: 700; }
+.sf-strip { display: flex; gap: 2px; margin: 0 0 14px; }
+.sf-seg { min-width: 0; padding: 6px 4px; text-align: center; font-size: 0.72rem; border-radius: 3px; overflow: hidden; white-space: nowrap; color: #fff; }
+.sf-seg b { display: block; font-size: 0.74rem; text-overflow: ellipsis; overflow: hidden; }
+.sf-intro { background: #6b7d70; } .sf-head { background: #2f7d4f; } .sf-solo { background: #a8621b; }
+.sf-facts { margin: 0 0 14px; padding-left: 1.1em; font-size: 0.92rem; }
+.sf-facts li { margin: 4px 0; }
+.sf-scroll { overflow-x: auto; }
+.sf-table { width: 100%; border-collapse: collapse; font-size: 0.86rem; }
+.sf-table th, .sf-table td { padding: 5px 8px; border-bottom: 1px solid var(--edge); text-align: left; vertical-align: top; }
+.sf-table th { color: var(--muted); font-weight: 600; white-space: nowrap; }
+.sf-table td.num { font-variant-numeric: tabular-nums; white-space: nowrap; }
+.sf-table td:nth-child(5) { white-space: nowrap; font-weight: 600; }
+.sf-table tr.solo td:nth-child(5) { color: #c47a2c; }
+.cf { display: inline-block; padding: 0 6px; border-radius: 9px; font-size: 0.75rem; font-weight: 700; border: 1px solid currentColor; white-space: nowrap; }
+.cf-hi { color: #2f8a55; } .cf-mid { color: #b5851c; } .cf-lo { color: #c0513f; }
+</style>
+</head>
+<body>
+<main>
+  <div class="paper">
+    <header>
+      <h1>Green Hill Zone</h1>
+      <p class="sub">from Sonic the Hedgehog</p>
+    </header>
+    <p class="credits">Composed by Masato Nakamura<br>Transcribed by Jer Roque</p>
+    <div id="score"></div>
+  </div>
+  <p class="note">Transcribed into VexFlow by checking the original sheet image against the MIDI file. Some details, such as chord voicings, may differ from the original.</p>
+
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Reference recording: “Green Hill Zone – Performed by Tetrimino” (4:27) · Timestamps and bar counts come from audio analysis; section names and chords are as confirmed by the band.</p>
+    <p class="sf-summary">Intro 9 – Theme ×2 – Bass solo ×1 – Keyboard solo ×1 – Violin solo ×1 – Theme ×1 – C chord stop <span class="sf-sub">(1 chorus = A A′ B, 24 bars)</span></p>
+    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:9"><b>Intro</b><span>9</span></div><div class="sf-seg sf-head" style="flex:24"><b>Theme 1</b><span>24</span></div><div class="sf-seg sf-head" style="flex:24"><b>Theme 2</b><span>24</span></div><div class="sf-seg sf-solo" style="flex:24"><b>Bass</b><span>24</span></div><div class="sf-seg sf-solo" style="flex:24"><b>Keyboard</b><span>24</span></div><div class="sf-seg sf-solo" style="flex:24"><b>Violin</b><span>24</span></div><div class="sf-seg sf-head" style="flex:24"><b>Theme</b><span>24</span></div><div class="sf-seg sf-intro" style="flex:3"><b>End</b><span>3</span></div></div>
+    <ul class="sf-facts">
+      <li><b>Tempo</b> ♩=150.0, steady from the start to 4:05 (149.97–150.00 by region). 1 bar = 1.6 s, first downbeat at 0:01.0. <span class="cf cf-hi">High</span></li>
+      <li><b>Choruses</b> 24 bars (A 8 + A′ 8 + B 8) × 6 = 144 bars. Theme 2 + solos 3 + theme 1.</li>
+      <li><b>Solos</b> Bass (1:32.2) → keyboard (2:10.6) → violin (2:49.0), one chorus each. Theme returns at 3:27.4.</li>
+    </ul>
+    <div class="sf-scroll">
+    <table class="sf-table">
+      <thead><tr><th>Start</th><th>End</th><th>Bars</th><th>Count</th><th>Label</th><th>Confidence</th><th>Notes</th></tr></thead>
+      <tbody>
+      <tr class=""><td class="num">0:01.0</td><td class="num">0:02.6</td><td class="num">1–1</td><td class="num">1</td><td>Intro · 16th-note run</td><td><span class="cf cf-hi">High</span></td><td>1 bar, same as the original</td></tr>
+<tr class=""><td class="num">0:02.6</td><td class="num">0:15.4</td><td class="num">2–9</td><td class="num">8</td><td>Intro · CΔ7 vamp</td><td><span class="cf cf-hi">High</span></td><td>8 bars on a C pedal. In the last bar (0:13.8) the bass walks up D–E♭–E into A</td></tr>
+<tr class="head"><td class="num">0:15.4</td><td class="num">0:28.2</td><td class="num">10–17</td><td class="num">8</td><td>Theme 1 · A</td><td><span class="cf cf-hi">High</span></td><td>Theme melody</td></tr>
+<tr class="head"><td class="num">0:28.2</td><td class="num">0:41.0</td><td class="num">18–25</td><td class="num">8</td><td>Theme 1 · A′</td><td><span class="cf cf-hi">High</span></td><td>Theme melody</td></tr>
+<tr class="head"><td class="num">0:41.0</td><td class="num">0:53.8</td><td class="num">26–33</td><td class="num">8</td><td>Theme 1 · B</td><td><span class="cf cf-hi">High</span></td><td>Soft break (dynamics dip only)</td></tr>
+<tr class="head"><td class="num">0:53.8</td><td class="num">1:06.6</td><td class="num">34–41</td><td class="num">8</td><td>Theme 2 · A</td><td><span class="cf cf-hi">High</span></td><td>Theme melody</td></tr>
+<tr class="head"><td class="num">1:06.6</td><td class="num">1:19.4</td><td class="num">42–49</td><td class="num">8</td><td>Theme 2 · A′</td><td><span class="cf cf-hi">High</span></td><td>Theme melody</td></tr>
+<tr class="head"><td class="num">1:19.4</td><td class="num">1:32.2</td><td class="num">50–57</td><td class="num">8</td><td>Theme 2 · B</td><td><span class="cf cf-hi">High</span></td><td>Break on beats 1–3 of the last bar (1:30.6)</td></tr>
+<tr class="solo"><td class="num">1:32.2</td><td class="num">1:45.0</td><td class="num">58–65</td><td class="num">8</td><td>Bass solo · A</td><td><span class="cf cf-hi">High</span></td><td>Bass solo · original changes</td></tr>
+<tr class="solo"><td class="num">1:45.0</td><td class="num">1:57.8</td><td class="num">66–73</td><td class="num">8</td><td>Bass solo · A′</td><td><span class="cf cf-hi">High</span></td><td>〃</td></tr>
+<tr class="solo"><td class="num">1:57.8</td><td class="num">2:10.6</td><td class="num">74–81</td><td class="num">8</td><td>Bass solo · B</td><td><span class="cf cf-hi">High</span></td><td>Full break in the last bar (2:09.0)</td></tr>
+<tr class="solo"><td class="num">2:10.6</td><td class="num">2:23.4</td><td class="num">82–89</td><td class="num">8</td><td>Keyboard solo · A</td><td><span class="cf cf-hi">High</span></td><td>Keyboard solo · quick triplet passing chords in places, otherwise original changes</td></tr>
+<tr class="solo"><td class="num">2:23.4</td><td class="num">2:36.2</td><td class="num">90–97</td><td class="num">8</td><td>Keyboard solo · A′</td><td><span class="cf cf-hi">High</span></td><td>〃</td></tr>
+<tr class="solo"><td class="num">2:36.2</td><td class="num">2:49.0</td><td class="num">98–105</td><td class="num">8</td><td>Keyboard solo · B</td><td><span class="cf cf-hi">High</span></td><td>Break in the last bar (2:47.4)</td></tr>
+<tr class="solo"><td class="num">2:49.0</td><td class="num">3:01.8</td><td class="num">106–113</td><td class="num">8</td><td>Violin solo · A</td><td><span class="cf cf-hi">High</span></td><td>Violin solo · original changes</td></tr>
+<tr class="solo"><td class="num">3:01.8</td><td class="num">3:14.6</td><td class="num">114–121</td><td class="num">8</td><td>Violin solo · A′</td><td><span class="cf cf-hi">High</span></td><td>〃</td></tr>
+<tr class="solo"><td class="num">3:14.6</td><td class="num">3:27.4</td><td class="num">122–129</td><td class="num">8</td><td>Violin solo · B</td><td><span class="cf cf-hi">High</span></td><td>Break in the last bar (3:25.8)</td></tr>
+<tr class="head"><td class="num">3:27.4</td><td class="num">3:40.2</td><td class="num">130–137</td><td class="num">8</td><td>Theme (out) · A</td><td><span class="cf cf-hi">High</span></td><td>Theme returns</td></tr>
+<tr class="head"><td class="num">3:40.2</td><td class="num">3:53.0</td><td class="num">138–145</td><td class="num">8</td><td>Theme (out) · A′</td><td><span class="cf cf-hi">High</span></td><td>Theme returns</td></tr>
+<tr class="head"><td class="num">3:53.0</td><td class="num">4:05.8</td><td class="num">146–153</td><td class="num">8</td><td>Theme (out) · B</td><td><span class="cf cf-hi">High</span></td><td>Break in the last bar (4:04.2), then the ending chord</td></tr>
+<tr><td class="num">4:05.8</td><td class="num">≈4:10</td><td class="num">154–156</td><td class="num">≈3</td><td>Ending · C chord stop</td><td><span class="cf cf-mid">Med</span></td><td>One hit, held and left to decay. C7 or CΔ7 (chord quality uncertain). No tag repeats</td></tr>
+<tr><td class="num">4:10.6</td><td class="num">4:26.6</td><td class="num">–</td><td class="num">–</td><td>Tail (uncertain)</td><td><span class="cf cf-lo">Low</span></td><td>About 16 s of quiet, separate music off the 150 BPM grid. Probably a video outro, but uncertain — check by ear</td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Chord comparison</h3>
+    <div class="sf-scroll">
+    <table class="sf-table">
+      <thead><tr><th>Section</th><th>Original</th><th>Recording</th><th>Confidence</th></tr></thead>
+      <tbody>
+      <tr><td>Intro</td><td>CΔ7</td><td>CΔ7 (C pedal)</td><td><span class="cf cf-hi">High</span></td></tr>
+      <tr><td>Theme A</td><td>FΔ7 | E-7 ×3 | D-7 | CΔ7</td><td>Same as the original. In the second half of bar 8 the bass walks up D–E♭–E into FΔ7</td><td><span class="cf cf-hi">High</span></td></tr>
+      <tr><td>Theme B</td><td>B♭ | B♭ | A- | A- | A♭ | A♭ | F/G | F/G</td><td>Same as the original. The last bar is a break</td><td><span class="cf cf-hi">High</span></td></tr>
+      <tr><td>Bass solo (1:32)</td><td>〃</td><td>Same as the original</td><td><span class="cf cf-hi">High</span></td></tr>
+      <tr><td>Keyboard solo (2:10)</td><td>〃</td><td>Original changes plus quick triplet passing chords. The analysis picked up G-type harmony around bars 3 and 7 of A (2:13.8, 2:20.2, 2:33.0) — locations are approximate</td><td><span class="cf cf-mid">Med</span></td></tr>
+      <tr><td>Violin solo (2:49)</td><td>〃</td><td>Same as the original</td><td><span class="cf cf-hi">High</span></td></tr>
+      <tr><td>Ending</td><td>(Loop)</td><td>C7 or CΔ7</td><td><span class="cf cf-lo">Low</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+
+    <h3>Differences from the original</h3>
+    <ul class="sf-facts">
+      <li><b>No added or dropped bars</b> — all 6 choruses are exactly 24 bars. No extended or shortened chorus, no tag ending. <span class="cf cf-hi">High</span></li>
+      <li><b>9-bar intro</b> (run 1 + vamp 8) — matches the original MIDI. The chart above writes it as run 1 + vamp 6, so it is 2 bars short. <span class="cf cf-hi">High</span></li>
+      <li><b>Breaks</b> — in the last bar of every B (second F/G bar), beats 1–3 are left empty with a pickup on beat 4. Soft in Theme 1, clear from Theme 2 on. <span class="cf cf-hi">High</span></li>
+      <li><b>Ending</b> — after the break in the last theme, a single C chord instead of the loop (4:05.8). <span class="cf cf-mid">Med</span></li>
+      <li><b>Chords</b> — original changes throughout, apart from the triplet passing chords in the keyboard solo.</li>
+    </ul>
+    <p class="note">Bar numbers count the first downbeat of the recording (0:01.0) as bar 1. Timestamps are accurate to about ±0.05 s.</p>
+  </section>
+</main>
+
+<script src="https://cdn.jsdelivr.net/npm/vexflow@4.2.5/build/cjs/vexflow.js"></script>
+<script>
+(function () {
+  window.addEventListener('error', function (e) {
+    const p = document.createElement('p'); p.className = 'note';
+    p.textContent = 'Rendering error: ' + e.message; document.body.appendChild(p);
+  });
+  const { Renderer, Stave, StaveNote, Voice, Formatter, Beam, StaveTie,
+          Annotation, Accidental, Dot, Barline, Volta } = Vex.Flow;
+
+  const W = 1000, H = 200, TOP = 85, X0 = 10, USABLE = 980;
+  const score = document.getElementById('score');
+
+  // note spec helpers
+  const N = (k, d, o) => Object.assign({ k: [].concat(k), d: d }, o || {});
+  const R = (d) => N('b/4', d + 'r');
+  const CH = ['g/4', 'b/4'];
+
+  function makeNote(s) {
+    const rest = s.d.endsWith('r');
+    const n = new StaveNote({ keys: s.k, duration: s.d, clef: 'treble', stem_direction: s.up ? 1 : -1 });
+    if (!rest) {
+      s.k.forEach((k, i) => { if (/^[a-g]b\//.test(k)) n.addModifier(new Accidental('b'), i); });
+    }
+    if (/^(w|h|q|8|16)d$/.test(s.d)) Dot.buildAndAttach([n], { all: true });
+    n._spec = s;
+    return n;
+  }
+  const idx = (n) => n.keys.map((_, i) => i);
+
+  function drawSystem(bars, opts) {
+    opts = opts || {};
+    const div = document.createElement('div');
+    div.className = 'sys';
+    score.appendChild(div);
+    const renderer = new Renderer(div, Renderer.Backends.SVG);
+    renderer.resize(W, H);
+    const ctx = renderer.getContext();
+    ctx.svg.setAttribute('viewBox', '0 0 ' + W + ' ' + H);
+    ctx.svg.removeAttribute('width');
+    ctx.svg.removeAttribute('height');
+
+    const total = bars.reduce((a, b) => a + b.w, 0);
+    let x = X0;
+    const all = [];
+    const beamsAll = [];
+
+    bars.forEach((b, bi) => {
+      const w = USABLE * b.w / total;
+      const stave = new Stave(x, TOP, w);
+      if (bi === 0) {
+        stave.addClef('treble');
+        if (opts.time) stave.addTimeSignature('4/4');
+      }
+      if (b.tempo) stave.setTempo({ duration: 'q', dots: 0, bpm: 150 }, -48);
+      if (b.repeatBegin) stave.setBegBarType(Barline.type.REPEAT_BEGIN);
+      if (b.repeatEnd) stave.setEndBarType(Barline.type.REPEAT_END);
+      else if (b.double) stave.setEndBarType(Barline.type.DOUBLE);
+      if (b.volta) stave.setVoltaType(b.volta === '1.' ? Volta.type.BEGIN_END : Volta.type.BEGIN, b.volta, -14);
+      stave.setContext(ctx).draw();
+
+      if (b.section) {
+        ctx.save();
+        ctx.setFont('Arial', 13, 'bold');
+        ctx.beginPath();
+        ctx.rect(x + 4, TOP - 62, 20, 20);
+        ctx.stroke();
+        ctx.fillText(b.section, x + 9, TOP - 47);
+        ctx.restore();
+      }
+
+      const notes = b.notes.map(makeNote);
+      if (b.chord) {
+        const a = new Annotation(b.chord)
+          .setFont('Arial', 15, 'bold')
+          .setVerticalJustification(Annotation.VerticalJustify.TOP);
+        notes[0].addModifier(a, 0);
+      }
+      const voice = new Voice({ num_beats: 4, beat_value: 4 }).setStrict(false);
+      voice.addTickables(notes);
+      const avail = stave.getNoteEndX() - stave.getNoteStartX() - 14;
+      new Formatter().joinVoices([voice]).format([voice], Math.max(avail, 40));
+      // beams must exist before the notes are drawn, otherwise flags are drawn too
+      beamsAll.push(Beam.generateBeams(notes, { maintain_stem_directions: true }));
+      voice.draw(ctx, stave);
+      notes.forEach(n => all.push(n));
+      x += w;
+    });
+
+    beamsAll.forEach(bs => bs.forEach(bm => bm.setContext(ctx).draw()));
+
+    // ties (to the next note; open-ended at the end of a system)
+    all.forEach((n, i) => {
+      if (n._spec.t) {
+        const nxt = all[i + 1] || null;
+        new StaveTie({
+          first_note: n, last_note: nxt,
+          first_indices: idx(n), last_indices: nxt ? idx(nxt) : idx(n)
+        }).setContext(ctx).draw();
+      }
+    });
+    // tie arriving from the previous system
+    if (opts.carryIn) {
+      const f = all[0];
+      new StaveTie({
+        first_note: null, last_note: f,
+        first_indices: idx(f), last_indices: idx(f)
+      }).setContext(ctx).draw();
+    }
+  }
+
+  // ---------- Intro (pitches/rhythm checked against the MIDI) ----------
+  const X = ['g/4','b/4'], Y = ['f/4','a/4'], Z = ['a/4','c/5'];
+  const intro16 = ['a/5','f/5','a/5','f/5','b/5','g/5','b/5','g/5','c/6','a/5','c/6','a/5','d/6','b/5','d/6','b/5']
+    .map(k => N(k, '16', { up: true }));
+
+  drawSystem([
+    { w: 2.3, tempo: true, double: true, notes: intro16 },
+    { w: 1.0, chord: 'CΔ7', notes: [
+        N(['g/4','b/4','e/6'], 'qd'), N(Y, '8', { t: 1 }), N(Y, 'q'), N(X, 'q', { t: 1 }) ] },
+    { w: 1.0, notes: [
+        N(X, '8'), N(Y, 'qd'), N(X, 'q'), N(Y, 'q') ] },
+  ], { time: true });
+
+  // ---------- Intro, second line ----------
+  drawSystem([
+    { w: 1, chord: '( CΔ7 )', notes: [N(Z, 'qd'), N(X, '8', { t: 1 }), N(X, 'q'), N(Y, 'q', { t: 1 })] },
+    { w: 1, notes: [N(Y, 'w')] },
+    { w: 1, notes: [N(Y, 'qd'), N(X, '8', { t: 1 }), N(X, 'q'), N(Z, 'q')] },
+    { w: 1, double: true, notes: [N(Y, 'qd'), N(X, '8', { t: 1 }), N(X, 'q'), N(Z, 'q')] },
+  ]);
+
+  // ---------- A ----------
+  const FM = (chord) => [R('h'), N('c/6', '8'), N('a/5', 'q'), N('c/6', '8')];
+  const EM = () => [N('b/5', 'q'), N('c/6', '8'), N('b/5', '8', { t: 1 }), N('b/5', '8'), N('g/5', 'hd')]
+    .map((s, i) => i === 4 ? N('g/5', 'qd') : s);
+  const FM2 = () => [R('q'), R('8'), N('a/5', '8'), N('e/6', '8'), N('d/6', 'q'), N('c/6', '8')];
+
+  drawSystem([
+    { w: 1, section: 'A', chord: 'FΔ7', repeatBegin: true, notes: FM() },
+    { w: 1, chord: 'E-7', notes: EM() },
+    { w: 1, chord: 'FΔ7', notes: FM2() },
+    { w: 1, chord: 'E-7', notes: EM() },
+  ]);
+
+  drawSystem([
+    { w: 1, chord: 'FΔ7', notes: FM() },
+    { w: 1, chord: 'E-7', notes: EM() },
+    { w: 1, chord: 'D-7', notes: [R('q'), R('8'), N('a/5','8'), N('a/5','8'), N('f/5','q'), N('a/5','8')] },
+    { w: 1, chord: 'CΔ7', volta: '1.', repeatEnd: true, notes: [
+        N('g/5','q'), N('a/5','8'), N('g/5','8',{t:1}), N('g/5','8'), N('c/5','qd') ] },
+    { w: 1.5, chord: 'CΔ7', volta: '2.', double: true, notes: [
+        N('g/5','q'), N('a/5','8'), N('g/5','8',{t:1}), N('g/5','8'),
+        N('c/5','8'), N('c/5','8'), N('e/5','8') ] },
+  ]);
+
+  // ---------- B ----------
+  drawSystem([
+    { w: 1, section: 'B', chord: 'B♭', notes: [N('d/5', 'w', { t: 1 })] },
+    { w: 1.5, notes: [N('d/5','h'), R('8'), N('c/5','8'), N('d/5','8'), N('e/5','8',{t:1})] },
+    { w: 1, chord: 'A-', notes: [N('e/5','w',{t:1})] },
+    { w: 1.5, double: true, notes: [N('e/5','h'), R('8'), N('c/5','8'), N('c/5','8'), N('e/5','8')] },
+  ]);
+
+  drawSystem([
+    { w: 1, chord: 'A♭', notes: [N('eb/5', 'w', { t: 1 })] },
+    { w: 1.5, notes: [N('eb/5','h'), R('8'), N('c/5','8'), N('eb/5','8'), N('d/5','8',{t:1})] },
+    { w: 1.3, chord: 'F/G', notes: [N('d/5','hd',{}), R('8'), N('e/6','8',{t:1})] },
+    { w: 2, double: true, notes: [
+        N('e/6','8'), N('e/6','8'), N('f/6','8'), N('e/6','8'),
+        N('g/6','8'), N('e/6','8'), N('e/6','8'), N('c/6','8') ] },
+  ]);
+
+  // "Loop to [A]" label
+  const last = score.lastElementChild.querySelector('svg');
+  const t = document.createElementNS('http://www.w3.org/2000/svg', 'text');
+  t.setAttribute('x', X0 + USABLE - 2);
+  t.setAttribute('y', TOP + 92);
+  t.setAttribute('text-anchor', 'end');
+  t.setAttribute('font-family', 'Arial, sans-serif');
+  t.setAttribute('font-size', '13');
+  t.textContent = 'Loop to [A]';
+  last.appendChild(t);
+})();
+</script>
+</body>
+</html>
