@@ -19,7 +19,7 @@ h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05r
 .sf-strip { display:flex; gap:2px; margin:0 0 14px; }
 .sf-seg { min-width:0; padding:6px 4px; text-align:center; font-size:.72rem; border-radius:3px; overflow:hidden; white-space:nowrap; color:#fff; }
 .sf-seg b { display:block; font-size:.74rem; text-overflow:ellipsis; overflow:hidden; }
-.sf-intro { background:#6b7d70; } .sf-head { background:#2f7d4f; }
+.sf-intro { background:#6b7d70; } .sf-head { background:#2f7d4f; } .sf-solo { background:#a8621b; }
 .sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
 .sf-scroll { overflow-x:auto; }
 table { width:100%; border-collapse:collapse; font-size:.86rem; }
@@ -28,10 +28,10 @@ th { color:var(--muted); font-weight:600; white-space:nowrap; }
 td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
 .sf-table td:nth-child(4) { white-space:nowrap; font-weight:600; }
 .grid { display:grid; grid-template-columns:34px repeat(4,1fr); border-top:1px solid var(--edge); }
-.gl { font-weight:700; padding:12px 0; border-bottom:1px solid var(--edge); }
-.gb { display:flex; justify-content:space-around; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:1.05rem; font-weight:600; white-space:nowrap; }
+.gl { font-weight:800; font-size:1.3rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; justify-content:space-around; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(1rem,2.6vw,1.7rem); font-weight:700; white-space:nowrap; min-height:2.6em; align-items:center; }
 .gb:nth-child(5n) { border-right:2px solid var(--ink); }
-@media (max-width:600px) { .gb { font-size:.8rem; padding:10px 2px; } }
+@media (max-width:600px) { .grid { grid-template-columns:26px repeat(2,1fr); } .gb { font-size:1.15rem; } .gl { grid-row:span 2; font-size:1rem; } .gb:nth-child(5n) { border-right:0; } }
 .note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
 </style>
 </head>
@@ -42,39 +42,39 @@ td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
   <section class="songform" id="song-form">
     <h2>Song Form</h2>
     <p class="sf-meta">Reference recording: “Pennies From Heaven” – Julia Swing Ensemble · Timestamps and bar counts come from audio analysis.</p>
-    <p class="sf-summary">Intro ≈9 – Chorus ×4 – Ending ≈3 <span class="sf-sub">(1 chorus = A1 B A2 C, 32 bars)</span></p>
-    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:9"><b>Intro</b><span>9</span></div><div class="sf-seg sf-head" style="flex:32"><b>Chorus 1</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Chorus 2</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Chorus 3</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Chorus 4</b><span>32</span></div><div class="sf-seg sf-intro" style="flex:3"><b>End</b><span>3</span></div></div>
+    <p class="sf-summary">Intro ≈9 – Head – Guitar solo – Bass solo – Head – Ending ≈3 <span class="sf-sub">(1 chorus = A1 B A2 C, 32 bars)</span></p>
+    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:9"><b>Intro</b><span>9</span></div><div class="sf-seg sf-head" style="flex:32"><b>Head</b><span>32</span></div><div class="sf-seg sf-solo" style="flex:32"><b>Guitar solo</b><span>32</span></div><div class="sf-seg sf-solo" style="flex:32"><b>Bass solo</b><span>32</span></div><div class="sf-seg sf-head" style="flex:32"><b>Head</b><span>32</span></div><div class="sf-seg sf-intro" style="flex:3"><b>End</b><span>3</span></div></div>
     <ul class="sf-facts">
       <li><b>Tempo</b> ♩≈174, medium swing, played live (drifts between about 170 and 176). 1 bar ≈ 1.4 s.</li>
       <li><b>Key</b> C, same as the chart.</li>
-      <li><b>Choruses</b> 32 bars × 4 = 128 bars, each matching the chart changes. No added or dropped bars inside the choruses.</li>
+      <li><b>Choruses</b> 32 bars × 4 = 128 bars, each on the chart changes: head, guitar solo, bass solo, head. No added or dropped bars inside the choruses.</li>
     </ul>
     <div class="sf-scroll">
     <table class="sf-table">
       <thead><tr><th>Start</th><th>End</th><th>Bars</th><th>Label</th><th>Notes</th></tr></thead>
       <tbody>
       <tr><td class="num">0:00.5</td><td class="num">0:12.8</td><td class="num">≈9</td><td>Intro</td><td>G pedal (dominant) vamp. Bar count is approximate</td></tr>
-<tr><td class="num">0:12.8</td><td class="num">0:23.7</td><td class="num">10–17</td><td>Chorus 1 · A1</td><td>Top of the form</td></tr>
-<tr><td class="num">0:23.7</td><td class="num">0:34.7</td><td class="num">18–25</td><td>Chorus 1 · B</td><td></td></tr>
-<tr><td class="num">0:34.7</td><td class="num">0:45.8</td><td class="num">26–33</td><td>Chorus 1 · A2</td><td></td></tr>
-<tr><td class="num">0:45.8</td><td class="num">0:56.9</td><td class="num">34–41</td><td>Chorus 1 · C</td><td></td></tr>
-<tr><td class="num">0:56.9</td><td class="num">1:07.9</td><td class="num">42–49</td><td>Chorus 2 · A1</td><td>Top of the form</td></tr>
-<tr><td class="num">1:07.9</td><td class="num">1:19.0</td><td class="num">50–57</td><td>Chorus 2 · B</td><td></td></tr>
-<tr><td class="num">1:19.0</td><td class="num">1:30.2</td><td class="num">58–65</td><td>Chorus 2 · A2</td><td></td></tr>
-<tr><td class="num">1:30.2</td><td class="num">1:41.4</td><td class="num">66–73</td><td>Chorus 2 · C</td><td></td></tr>
-<tr><td class="num">1:41.4</td><td class="num">1:52.2</td><td class="num">74–81</td><td>Chorus 3 · A1</td><td>Top of the form</td></tr>
-<tr><td class="num">1:52.2</td><td class="num">2:03.3</td><td class="num">82–89</td><td>Chorus 3 · B</td><td></td></tr>
-<tr><td class="num">2:03.3</td><td class="num">2:14.1</td><td class="num">90–97</td><td>Chorus 3 · A2</td><td></td></tr>
-<tr><td class="num">2:14.1</td><td class="num">2:25.0</td><td class="num">98–105</td><td>Chorus 3 · C</td><td></td></tr>
-<tr><td class="num">2:25.0</td><td class="num">2:36.1</td><td class="num">106–113</td><td>Chorus 4 · A1</td><td>Top of the form</td></tr>
-<tr><td class="num">2:36.1</td><td class="num">2:47.3</td><td class="num">114–121</td><td>Chorus 4 · B</td><td></td></tr>
-<tr><td class="num">2:47.3</td><td class="num">2:58.6</td><td class="num">122–129</td><td>Chorus 4 · A2</td><td></td></tr>
-<tr><td class="num">2:58.6</td><td class="num">3:09.7</td><td class="num">130–137</td><td>Chorus 4 · C</td><td></td></tr>
+<tr><td class="num">0:12.8</td><td class="num">0:23.7</td><td class="num">10–17</td><td>Head · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">0:23.7</td><td class="num">0:34.7</td><td class="num">18–25</td><td>Head · B</td><td></td></tr>
+<tr><td class="num">0:34.7</td><td class="num">0:45.8</td><td class="num">26–33</td><td>Head · A2</td><td></td></tr>
+<tr><td class="num">0:45.8</td><td class="num">0:56.9</td><td class="num">34–41</td><td>Head · C</td><td></td></tr>
+<tr><td class="num">0:56.9</td><td class="num">1:07.9</td><td class="num">42–49</td><td>Guitar solo · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">1:07.9</td><td class="num">1:19.0</td><td class="num">50–57</td><td>Guitar solo · B</td><td></td></tr>
+<tr><td class="num">1:19.0</td><td class="num">1:30.2</td><td class="num">58–65</td><td>Guitar solo · A2</td><td></td></tr>
+<tr><td class="num">1:30.2</td><td class="num">1:41.4</td><td class="num">66–73</td><td>Guitar solo · C</td><td></td></tr>
+<tr><td class="num">1:41.4</td><td class="num">1:52.2</td><td class="num">74–81</td><td>Bass solo · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">1:52.2</td><td class="num">2:03.3</td><td class="num">82–89</td><td>Bass solo · B</td><td></td></tr>
+<tr><td class="num">2:03.3</td><td class="num">2:14.1</td><td class="num">90–97</td><td>Bass solo · A2</td><td></td></tr>
+<tr><td class="num">2:14.1</td><td class="num">2:25.0</td><td class="num">98–105</td><td>Bass solo · C</td><td></td></tr>
+<tr><td class="num">2:25.0</td><td class="num">2:36.1</td><td class="num">106–113</td><td>Head (out) · A1</td><td>Top of the form</td></tr>
+<tr><td class="num">2:36.1</td><td class="num">2:47.3</td><td class="num">114–121</td><td>Head (out) · B</td><td></td></tr>
+<tr><td class="num">2:47.3</td><td class="num">2:58.6</td><td class="num">122–129</td><td>Head (out) · A2</td><td></td></tr>
+<tr><td class="num">2:58.6</td><td class="num">3:09.7</td><td class="num">130–137</td><td>Head (out) · C</td><td></td></tr>
 <tr><td class="num">3:09.7</td><td class="num">≈3:15</td><td class="num">138–140</td><td>Ending</td><td>About 3 bars of closing hits after the last chorus, then the final chord rings out</td></tr>
       </tbody>
     </table>
     </div>
-    <h3>Chord chart</h3>
+    <h3>Changes · bar by bar</h3>
     <div class="grid"><div class="gl">A1</div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl"></div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl">B</div><div class="gb"><span>C7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>D7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>G7</span></div><div class="gb"><span>%</span></div><div class="gl">A2</div><div class="gb"><span>C6</span><span>D-7</span></div><div class="gb"><span>E-7</span><span>E♭°7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>G7</span></div><div class="gl"></div><div class="gb"><span>C6</span></div><div class="gb"><span>G-7</span><span>C7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>%</span></div><div class="gl">C</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>B♭7♯11</span></div><div class="gb"><span>CΔ7</span></div><div class="gb"><span>A7</span></div><div class="gl"></div><div class="gb"><span>D-7</span></div><div class="gb"><span>D7</span><span>G7</span></div><div class="gb"><span>C6</span></div><div class="gb"><span>(D-7</span><span>G7)</span></div></div>
     <p class="note">Bar numbers count from the start of the recording. Because the tempo is not fixed, timestamps are accurate to roughly ±0.2 s.</p>
   </section>
