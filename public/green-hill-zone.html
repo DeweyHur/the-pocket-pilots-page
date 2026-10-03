@@ -71,6 +71,11 @@ h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-
 .sf-table tr.solo td:nth-child(5) { color: #c47a2c; }
 .cf { display: inline-block; padding: 0 6px; border-radius: 9px; font-size: 0.75rem; font-weight: 700; border: 1px solid currentColor; white-space: nowrap; }
 .cf-hi { color: #2f8a55; } .cf-mid { color: #b5851c; } .cf-lo { color: #c0513f; }
+.grid { display:grid; grid-template-columns:48px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:800; font-size:1.2rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; justify-content:space-around; align-items:center; min-height:2.6em; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(1rem,2.6vw,1.7rem); font-weight:700; white-space:nowrap; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+@media (max-width:600px) { .grid { grid-template-columns:40px repeat(2,1fr); } .gb { font-size:1.15rem; } .gl { grid-row:span 2; font-size:.95rem; } .gb:nth-child(5n) { border-right:0; } }
 </style>
 </head>
 <body>
@@ -124,21 +129,9 @@ h1 { margin: 0; font-size: clamp(1.8rem, 5vw, 2.6rem); font-weight: 700; letter-
     </table>
     </div>
 
-    <h3>Chord comparison</h3>
-    <div class="sf-scroll">
-    <table class="sf-table">
-      <thead><tr><th>Section</th><th>Original</th><th>Recording</th></tr></thead>
-      <tbody>
-      <tr><td>Intro</td><td>CΔ7</td><td>CΔ7 (C pedal)</td></tr>
-      <tr><td>Theme A</td><td>FΔ7 | E-7 ×3 | D-7 | CΔ7</td><td>Same as the original. In the second half of bar 8 the bass walks up D–E♭–E into FΔ7</td></tr>
-      <tr><td>Theme B</td><td>B♭ | B♭ | A- | A- | A♭ | A♭ | F/G | F/G</td><td>Same as the original. The last bar is a break</td></tr>
-      <tr><td>Bass solo (1:32)</td><td>〃</td><td>Same as the original</td></tr>
-      <tr><td>Keyboard solo (2:10)</td><td>〃</td><td>Original changes, plus a passage that cycles ii–V–I–IV (D-7 – G7 – CΔ7 – FΔ7 …) with a chord change every 5 beats</td></tr>
-      <tr><td>Violin solo (2:49)</td><td>〃</td><td>Same as the original</td></tr>
-      <tr><td>Ending</td><td>(Loop)</td><td>C</td></tr>
-      </tbody>
-    </table>
-    </div>
+    <h3>Changes · bar by bar</h3>
+    <div class="grid"><div class="gl">Intro</div><div class="gb"><span>CΔ7</span></div><div class="gb"><span>%</span></div><div class="gb"><span>%</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>%</span></div><div class="gb"><span>%</span></div><div class="gb"><span>%</span></div><div class="gb"><span>%</span></div><div class="gl">A</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gl"></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>CΔ7</span></div><div class="gl">A′</div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gl"></div><div class="gb"><span>FΔ7</span></div><div class="gb"><span>E-7</span></div><div class="gb"><span>D-7</span></div><div class="gb"><span>CΔ7</span></div><div class="gl">B</div><div class="gb"><span>B♭</span></div><div class="gb"><span>%</span></div><div class="gb"><span>A-</span></div><div class="gb"><span>%</span></div><div class="gl"></div><div class="gb"><span>A♭</span></div><div class="gb"><span>%</span></div><div class="gb"><span>F/G</span></div><div class="gb"><span>F/G (break)</span></div></div>
+    <p class="note">Intro is a 1-bar 16th-note run, then this 8-bar CΔ7 vamp. One chorus = A A′ B. Keyboard solo: includes a passage cycling ii–V–I–IV (D-7 – G7 – CΔ7 – FΔ7 …) with a chord change every 5 beats.</p>
 
     <h3>Differences from the original</h3>
     <ul class="sf-facts">
