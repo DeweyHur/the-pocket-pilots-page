@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Take Five – Song Form</title>
+<style>
+:root { --bg:#e9efe6; --ink:#16241a; --muted:#566a5b; --edge:#c4d1c1; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a13; --ink:#e6efe3; --muted:#93a79a; --edge:#2a3b2f; } }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+main { max-width:1040px; margin:0 auto; padding:24px 16px 48px; }
+h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:-0.01em; }
+.sub { margin:2px 0 18px; color:var(--muted); }
+.songform { padding:22px 20px; border:1px solid var(--edge); border-radius:4px; }
+h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05rem; }
+.sf-meta { margin:0; color:var(--muted); font-size:.85rem; }
+.sf-sub { font-weight:400; font-size:.85rem; color:var(--muted); }
+.sf-summary { margin:14px 0; font-size:1.1rem; font-weight:700; }
+.sf-strip { display:flex; gap:2px; margin:0 0 14px; }
+.sf-seg { min-width:0; padding:6px 4px; text-align:center; font-size:.72rem; border-radius:3px; overflow:hidden; white-space:nowrap; color:#fff; }
+.sf-seg b { display:block; font-size:.74rem; text-overflow:ellipsis; overflow:hidden; }
+.sf-intro { background:#6b7d70; } .sf-head { background:#2f7d4f; } .sf-solo { background:#a8621b; }
+.sf-table tr.solo td:nth-child(5) { color:#c47a2c; }
+.sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
+.sf-scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.86rem; }
+th,td { padding:5px 8px; border-bottom:1px solid var(--edge); text-align:left; vertical-align:top; }
+th { color:var(--muted); font-weight:600; white-space:nowrap; }
+td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.sf-table td:nth-child(5) { white-space:nowrap; font-weight:600; }
+.grid { display:grid; grid-template-columns:44px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:800; font-size:1.05rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; justify-content:space-around; align-items:center; min-height:2.6em; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(.95rem,2.4vw,1.6rem); font-weight:700; white-space:nowrap; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+@media (max-width:600px) { .grid { grid-template-columns:36px repeat(2,1fr); } .gb { font-size:1.05rem; } .gl { grid-row:span 2; font-size:.9rem; } .gb:nth-child(5n) { border-right:0; } }
+.note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Take Five</h1>
+  <p class="sub">Paul Desmond · 5/4 · A B A, 8 bars each</p>
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Reference recording: “Take Five” – Les Nuages · Timestamps and bar counts come from audio analysis.</p>
+    <p class="sf-summary">Intro 4 – A B A – Vamp 4 – Violin solo A×3 – Bass solo A×1 – B A – Tag <span class="sf-sub">(each section = 8 bars of 5/4)</span></p>
+    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:4"><b>Intro</b><span>4</span></div><div class="sf-seg sf-head" style="flex:8"><b>A</b><span>8</span></div><div class="sf-seg sf-head" style="flex:8"><b>B</b><span>8</span></div><div class="sf-seg sf-head" style="flex:8"><b>A</b><span>8</span></div><div class="sf-seg sf-intro" style="flex:4"><b>Vamp</b><span>4</span></div><div class="sf-seg sf-solo" style="flex:24"><b>Violin ×3</b><span>24</span></div><div class="sf-seg sf-solo" style="flex:8"><b>Bass</b><span>8</span></div><div class="sf-seg sf-head" style="flex:8"><b>B</b><span>8</span></div><div class="sf-seg sf-head" style="flex:8"><b>A</b><span>8</span></div><div class="sf-seg sf-intro" style="flex:3"><b>Tag</b><span>3</span></div></div>
+    <ul class="sf-facts">
+      <li><b>Tempo</b> ♩=176 in 5/4, steady throughout. 1 bar ≈ 1.7 s. Each bar splits 3 + 2 (E♭-7 for three beats, B♭-7 for two).</li>
+      <li><b>Solos</b> are over the A vamp only: violin 3 × 8 bars, then bass 1 × 8 bars. The bridge is not played during solos.</li>
+      <li><b>Out</b> After the bass solo the tune re-enters at B, then A, then a tag on the title line.</li>
+      <li><b>Key</b> The chart below is in E♭ minor as written. The reference recording sounds a half step higher (E minor).</li>
+    </ul>
+    <div class="sf-scroll">
+    <table class="sf-table">
+      <thead><tr><th>Start</th><th>End</th><th>Bars</th><th>Count</th><th>Label</th><th>Notes</th></tr></thead>
+      <tbody>
+      <tr class=""><td class="num">0:00.3</td><td class="num">0:07.2</td><td class="num">1–4</td><td class="num">4</td><td>Intro</td><td>Vamp, 4 bars</td></tr>
+<tr class=""><td class="num">0:07.2</td><td class="num">0:20.8</td><td class="num">5–12</td><td class="num">8</td><td>Theme · A</td><td>Vocal</td></tr>
+<tr class=""><td class="num">0:20.8</td><td class="num">0:34.4</td><td class="num">13–20</td><td class="num">8</td><td>Theme · B</td><td>Vocal</td></tr>
+<tr class=""><td class="num">0:34.4</td><td class="num">0:48.1</td><td class="num">21–28</td><td class="num">8</td><td>Theme · A</td><td>Vocal, ends on the title line</td></tr>
+<tr class=""><td class="num">0:48.1</td><td class="num">0:54.9</td><td class="num">29–32</td><td class="num">4</td><td>Interlude</td><td>Vamp drops down, 4 bars</td></tr>
+<tr class="solo"><td class="num">0:54.9</td><td class="num">1:08.5</td><td class="num">33–40</td><td class="num">8</td><td>Violin solo · A (1)</td><td>Vamp only</td></tr>
+<tr class="solo"><td class="num">1:08.5</td><td class="num">1:22.2</td><td class="num">41–48</td><td class="num">8</td><td>Violin solo · A (2)</td><td></td></tr>
+<tr class="solo"><td class="num">1:22.2</td><td class="num">1:35.8</td><td class="num">49–56</td><td class="num">8</td><td>Violin solo · A (3)</td><td></td></tr>
+<tr class="solo"><td class="num">1:35.8</td><td class="num">1:49.4</td><td class="num">57–64</td><td class="num">8</td><td>Bass solo · A</td><td>Vamp only, 8 bars</td></tr>
+<tr class=""><td class="num">1:49.4</td><td class="num">2:03.1</td><td class="num">65–72</td><td class="num">8</td><td>Theme (out) · B</td><td>Vocal comes back in at the bridge</td></tr>
+<tr class=""><td class="num">2:03.1</td><td class="num">2:16.7</td><td class="num">73–80</td><td class="num">8</td><td>Theme (out) · A</td><td>Vocal</td></tr>
+<tr><td class="num">2:16.7</td><td class="num">≈2:21</td><td class="num">81–83</td><td class="num">≈3</td><td>Tag</td><td>Title line repeated three more times over the vamp, then out</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3>Changes · bar by bar</h3>
+    <div class="grid"><div class="gl">A</div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gl"></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>G♭7♯5</span></div><div class="gl">B</div><div class="gb"><span>C♭Δ7</span><span>A♭-6</span></div><div class="gb"><span>B♭-7</span><span>E♭-7</span></div><div class="gb"><span>A♭-7</span><span>D♭7</span></div><div class="gb"><span>G♭Δ7</span><span>G♭7♯5</span></div><div class="gl"></div><div class="gb"><span>C♭Δ7</span><span>A♭-6</span></div><div class="gb"><span>B♭-7</span><span>E♭-7</span></div><div class="gb"><span>A♭-7</span><span>D♭7</span></div><div class="gb"><span>F-7</span><span>B♭7</span></div><div class="gl">A</div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gl"></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span><span>B♭-7</span></div><div class="gb"><span>E♭-7</span></div></div>
+    <p class="note">Solos and the tag stay on the A vamp. Bar numbers count from the start of the recording; timestamps are accurate to about ±0.1 s.</p>
+  </section>
+</main>
+</body>
+</html>
