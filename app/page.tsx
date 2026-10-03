@@ -335,18 +335,19 @@ export default function Home() {
               <article className="song-row" key={song.title}>
                 <span className="song-number">{String(index + 1).padStart(2, "0")}</span>
                 <h3>{song.title}</h3>
-                <span className="song-type">Reference track</span>
+                {/green hill zone/i.test(song.title) ? (
+                  <a className="song-type song-form-link" href="./green-hill-zone.html" target="_blank" rel="noreferrer">
+                    Lead sheet &amp; song form <span aria-hidden="true">↗</span>
+                  </a>
+                ) : (
+                  <span className="song-type">Reference track</span>
+                )}
                 <a className="song-link" href={song.link} target="_blank" rel="noreferrer" aria-label={`Watch ${song.title} on YouTube`}>
                   <span>Watch</span><span aria-hidden="true">↗</span>
                 </a>
               </article>
             ))}
           </div>
-          <p style={{ marginTop: "1.5rem" }}>
-            <a className="text-link" href="./green-hill-zone.html" target="_blank" rel="noreferrer">
-              Green Hill Zone — lead sheet &amp; song form <span aria-hidden="true">↗</span>
-            </a>
-          </p>
         </div>
       </section>
 

@@ -90,6 +90,8 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .song-type { color: #77786f; font-size: 10px; letter-spacing: 0.08em; text-transform: uppercase; }
 .song-link { display: flex; justify-content: space-between; align-items: center; color: #6b7062; font-size: 10px; font-weight: 800; letter-spacing: 0.09em; text-transform: uppercase; transition: color 180ms ease; }
 .song-link:hover { color: var(--orange); }
+.song-form-link { color: #101112; font-weight: 800; text-decoration: underline; text-underline-offset: 3px; transition: color 180ms ease; }
+.song-form-link:hover { color: var(--orange); }
 .song-link span:last-child { font-size: 17px; }
 
 .details-section { padding-bottom: 112px; }
@@ -129,6 +131,7 @@ button, a { -webkit-tap-highlight-color: transparent; }
   .member-card { min-height: 190px; }
   .song-row { grid-template-columns: 34px minmax(0, 1fr) 36px; gap: 10px; min-height: 92px; }
   .song-type { display: none; }
+  .song-form-link { display: block; grid-column: 2; grid-row: 2; padding-bottom: 14px; }
   .song-link span:first-child { display: none; }
   .detail-card { min-height: 220px; }
   .sheet-section { grid-template-columns: 46px minmax(0, 1fr); gap: 18px; }
