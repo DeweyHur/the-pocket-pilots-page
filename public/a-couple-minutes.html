@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>A Couple Minutes – Song Form</title>
+<style>
+:root { --bg:#e9efe6; --ink:#16241a; --muted:#566a5b; --edge:#c4d1c1; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a13; --ink:#e6efe3; --muted:#93a79a; --edge:#2a3b2f; } }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+main { max-width:1040px; margin:0 auto; padding:24px 16px 48px; }
+h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:-0.01em; }
+.sub { margin:2px 0 18px; color:var(--muted); }
+.songform { padding:22px 20px; border:1px solid var(--edge); border-radius:4px; }
+h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05rem; }
+.sf-meta { margin:0; color:var(--muted); font-size:.85rem; }
+.sf-sub { font-weight:400; font-size:.85rem; color:var(--muted); }
+.sf-summary { margin:14px 0; font-size:1.1rem; font-weight:700; }
+.sf-strip { display:flex; gap:2px; margin:0 0 14px; }
+.sf-seg { min-width:0; padding:6px 4px; text-align:center; font-size:.72rem; border-radius:3px; overflow:hidden; white-space:nowrap; color:#fff; }
+.sf-seg b { display:block; font-size:.74rem; text-overflow:ellipsis; overflow:hidden; }
+.sf-intro { background:#6b7d70; } .sf-head { background:#2f7d4f; } .sf-solo { background:#a8621b; }
+.sf-table tr.solo td:nth-child(5) { color:#c47a2c; }
+.sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
+.sf-scroll { overflow-x:auto; }
+table { width:100%; border-collapse:collapse; font-size:.86rem; }
+th,td { padding:5px 8px; border-bottom:1px solid var(--edge); text-align:left; vertical-align:top; }
+th { color:var(--muted); font-weight:600; white-space:nowrap; }
+td.num { font-variant-numeric:tabular-nums; white-space:nowrap; }
+.sf-table td:nth-child(5) { white-space:nowrap; font-weight:600; }
+.grid { display:grid; grid-template-columns:44px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:800; font-size:1.05rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb span { font-size:.8em; }
+.gb { display:flex; justify-content:space-around; align-items:center; min-height:2.6em; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(.95rem,2.4vw,1.6rem); font-weight:700; white-space:nowrap; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+@media (max-width:600px) { .grid { grid-template-columns:36px repeat(2,1fr); } .gb { font-size:1.05rem; } .gl { grid-row:span 2; font-size:.9rem; } .gb:nth-child(5n) { border-right:0; } }
+.note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>A Couple Minutes</h1>
+  <p class="sub">Olivia Dean · 4/4 · one 4-bar loop throughout</p>
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Reference recording: Olivia Dean – “A Couple Minutes” (A COLORS SHOW) · Timestamps and bar counts come from audio analysis.</p>
+    <p class="sf-summary">Intro 4 – Low 12 – Full 8 – Low 10 – Full 16 – Ending 4 <span class="sf-sub">(54 bars, the same loop all the way)</span></p>
+    <div class="sf-strip" aria-hidden="true"><div class="sf-seg sf-intro" style="flex:4"><b>Intro</b><span>4</span></div><div class="sf-seg sf-head" style="flex:12"><b>Low 1</b><span>12</span></div><div class="sf-seg sf-solo" style="flex:8"><b>Full 1</b><span>8</span></div><div class="sf-seg sf-head" style="flex:10"><b>Low 2</b><span>10</span></div><div class="sf-seg sf-solo" style="flex:16"><b>Full 2</b><span>16</span></div><div class="sf-seg sf-intro" style="flex:4"><b>End</b><span>4</span></div></div>
+    <ul class="sf-facts">
+      <li><b>Tempo</b> ♩≈63, slow 4/4. 1 bar ≈ 3.8 s.</li>
+      <li><b>Loop</b> The same 4-bar loop repeats from start to finish; the form is made by dynamics, not by chord changes.</li>
+      <li><b>Sections</b> are named by how full the band is: “Low” is the sparse feel, “Full” is the opened-up feel.</li>
+      <li><b>Key</b> The chart below is in D as written. The reference recording sounds a half step higher (E♭).</li>
+    </ul>
+    <div class="sf-scroll">
+    <table class="sf-table">
+      <thead><tr><th>Start</th><th>End</th><th>Bars</th><th>Count</th><th>Label</th><th>Notes</th></tr></thead>
+      <tbody>
+      <tr class=""><td class="num">0:00.0</td><td class="num">0:15.5</td><td class="num">1–4</td><td class="num">4</td><td>Intro</td><td>Keys only</td></tr>
+<tr class=""><td class="num">0:15.5</td><td class="num">1:01.6</td><td class="num">5–16</td><td class="num">12</td><td>Low section 1</td><td>Bass and drums come in</td></tr>
+<tr class="solo"><td class="num">1:01.6</td><td class="num">1:32.3</td><td class="num">17–24</td><td class="num">8</td><td>Full section 1</td><td>Band opens up</td></tr>
+<tr class=""><td class="num">1:32.3</td><td class="num">2:10.7</td><td class="num">25–34</td><td class="num">10</td><td>Low section 2</td><td>Drops back down</td></tr>
+<tr class="solo"><td class="num">2:10.7</td><td class="num">3:12.1</td><td class="num">35–50</td><td class="num">16</td><td>Full section 2</td><td>Opens up again and keeps building to the end</td></tr>
+<tr class=""><td class="num">3:12.1</td><td class="num">≈3:27</td><td class="num">51–54</td><td class="num">4</td><td>Ending</td><td>Bass drops out, last pass through the loop</td></tr>
+      </tbody>
+    </table>
+    </div>
+    <h3>Changes · bar by bar</h3>
+    <div class="grid"><div class="gl">Loop</div><div class="gb"><span>D</span><span>E-</span><span>F♯-</span><span>G</span></div><div class="gb"><span>F♯-</span><span>Dsus2</span></div><div class="gb"><span>D</span><span>E-</span><span>F♯-</span><span>GΔ7</span></div><div class="gb"><span>F♯-7</span></div></div>
+    <p class="note">In bars 1 and 3 the chords move on each eighth note and the last one is held into the next bar. Bar numbers count from the start of the recording; timestamps are accurate to about ±0.2 s.</p>
+  </section>
+</main>
+</body>
+</html>
