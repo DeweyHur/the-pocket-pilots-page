@@ -63,7 +63,7 @@ const FALLBACK_PLAN: BandPlan = {
     time: "8:00–10:00 PM",
     location: "422 S Western Ave, Los Angeles, CA 90020",
     payLink:
-      "https://venmo.com/joonpark80?txn=pay&amount=12&note=Meetup%20entry",
+      "https://venmo.com/joonpark80?txn=pay&amount=15&note=Meetup%20entry",
   },
 };
 
@@ -384,7 +384,7 @@ export default function Home() {
           </article>
           <article className="detail-card payment-card">
             <span className="detail-label">Entry</span>
-            <h3>$12</h3>
+            <h3>$15</h3>
             <p>Send your room fee before we tune up.</p>
             <a className="button button-dark" href={plan.rehearsal.payLink} target="_blank" rel="noreferrer">Pay via Venmo <span aria-hidden="true">↗</span></a>
           </article>
