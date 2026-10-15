@@ -93,6 +93,7 @@ const SONG_FORMS = [
   { match: /fox.*chick/i, href: "./foxy-chick-and-a-cool-cat.html", label: "Song form" },
   { match: /take five/i, href: "./take-five.html", label: "Song form" },
   { match: /couple minutes/i, href: "./a-couple-minutes.html", label: "Song form" },
+  { match: /two of us/i, href: "./just-two-of-us.html", label: "Song form" },
 ];
 
 function songForm(title: string) {
