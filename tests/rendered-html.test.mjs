@@ -31,7 +31,7 @@ test("server-renders the Pocket Pilots rehearsal hub", async () => {
   assert.match(html, /<title>The Pocket Pilots — Rehearsal HQ<\/title>/i);
   assert.match(html, /Players on deck/);
   assert.match(html, /Songs to bring alive/);
-  assert.match(html, /September 1, 2026/);
+  assert.match(html, /October 20, 2026/);
   assert.match(html, /422 S Western Ave, Los Angeles, CA 90020/);
   assert.match(html, /Fox Chick and a Cool Cat/);
   assert.match(html, /Song for My Father/);
