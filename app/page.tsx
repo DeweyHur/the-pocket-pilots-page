@@ -57,9 +57,29 @@ const FALLBACK_PLAN: BandPlan = {
       title: "Chank",
       link: "https://www.youtube.com/watch?v=81CnBzABteQ",
     },
+    {
+      title: "Just Two of Us",
+      link: "https://www.youtube.com/watch?v=vaXNdVTGT0k",
+    },
+    {
+      title: "Our Song",
+      link: "https://www.youtube.com/watch?v=I9-isF2oxeA",
+    },
+    {
+      title: "Can't Stop",
+      link: "https://www.youtube.com/watch?v=8DyziWtkfBw",
+    },
+    {
+      title: "Superstition",
+      link: "https://www.youtube.com/watch?v=Qcg3A1c7lIo",
+    },
+    {
+      title: "Libertango",
+      link: "https://www.youtube.com/watch?v=Jb2stN7kH28",
+    },
   ],
   rehearsal: {
-    date: "September 1, 2026",
+    date: "October 20, 2026",
     time: "8:00–10:00 PM",
     location: "422 S Western Ave, Los Angeles, CA 90020",
     payLink:
@@ -287,7 +307,7 @@ export default function Home() {
           <p className="eyebrow"><span className="live-dot" /> Los Angeles · next session</p>
           <h1 id="hero-title">Lock in.<br /><em>Lift off.</em></h1>
           <p className="hero-intro">
-            The quick reference for our next room. Three players, four songs, one loud evening.
+            The quick reference for our next room. Three players, nine songs, one loud evening.
           </p>
           <div className="hero-actions">
             <a className="button button-primary" href="#setlist">See the setlist <span aria-hidden="true">↓</span></a>
