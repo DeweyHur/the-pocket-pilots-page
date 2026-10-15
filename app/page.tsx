@@ -94,6 +94,10 @@ const SONG_FORMS = [
   { match: /take five/i, href: "./take-five.html", label: "Song form" },
   { match: /couple minutes/i, href: "./a-couple-minutes.html", label: "Song form" },
   { match: /two of us/i, href: "./just-two-of-us.html", label: "Song form" },
+  { match: /our song/i, href: "./our-song.html", label: "Song form" },
+  { match: /superstition/i, href: "./superstition.html", label: "Song form" },
+  { match: /libertango/i, href: "./libertango.html", label: "Violin solo" },
+  { match: /can.?t stop/i, href: "./cant-stop.html", label: "Chord chart" },
 ];
 
 function songForm(title: string) {

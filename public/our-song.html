@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Our Song – Song Form</title>
+<style>
+:root { --bg:#e9efe6; --ink:#16241a; --muted:#566a5b; --edge:#c4d1c1; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a13; --ink:#e6efe3; --muted:#93a79a; --edge:#2a3b2f; } }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+main { max-width:1040px; margin:0 auto; padding:24px 16px 48px; }
+h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:-0.01em; }
+.sub { margin:2px 0 18px; color:var(--muted); }
+.songform { padding:22px 20px; border:1px solid var(--edge); border-radius:4px; }
+h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05rem; }
+.sf-meta { margin:0; color:var(--muted); font-size:.85rem; }
+.sf-summary { margin:14px 0; font-size:1.1rem; font-weight:700; }
+.sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
+.grid { display:grid; grid-template-columns:96px repeat(4,1fr); border-top:1px solid var(--edge); }
+.gl { font-weight:800; font-size:.9rem; display:flex; align-items:center; padding:12px 0; border-bottom:1px solid var(--edge); }
+.gb { display:flex; flex-wrap:wrap; justify-content:space-around; align-items:center; gap:0 8px; min-height:2.6em; padding:12px 6px; border-left:2px solid var(--ink); border-bottom:1px solid var(--edge); font-size:clamp(.95rem,2.4vw,1.5rem); font-weight:700; white-space:nowrap; }
+.gb span { font-size:.8em; }
+.gb:nth-child(5n) { border-right:2px solid var(--ink); }
+.grid.bridge { grid-template-columns:96px repeat(3,1fr); }
+.grid.bridge .gb:nth-child(5n) { border-right:0; }
+@media (max-width:600px) { .grid, .grid.bridge { grid-template-columns:72px repeat(2,1fr); } .gb { font-size:1rem; } .gb:nth-child(5n) { border-right:0; } }
+.note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Our Song</h1>
+  <p class="sub">Taylor Swift · 4/4 · written in D · chords D – Em – G – A</p>
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Source: chord chart (lyrics with chord positions). Bar counts follow the lyric lines.</p>
+    <p class="sf-summary">Intro 8 – Verse 1 16 – Chorus 8 – Interlude 4 – Verse 2 16 – Chorus 8 – Da-da 8 – Bridge 3 lines – Chorus 8 – Outro 12</p>
+    <ul class="sf-facts">
+      <li><b>Groove</b> Almost everything is the same four-chord loop, D – Em – G – A. The lines change, not the harmony.</li>
+      <li><b>Chorus</b> Two versions: the first sings “our song is the slamming screen door”, and the last one switches to “his” and “he”.</li>
+      <li><b>Bridge</b> Only three lines: “I’ve heard every album…”, “Waited for something…”, “That was as good as our song”.</li>
+      <li><b>Ending</b> The verse returns (“I was riding shotgun…”) and ends on G.</li>
+    </ul>
+
+    <h3>Intro · Verse 1</h3>
+    <div class="grid"><div class="gl">Intro</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div></div>
+    <div class="grid"><div class="gl">Verse 1</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div></div>
+
+    <h3>Chorus · Interlude · Verse 2</h3>
+    <div class="grid"><div class="gl">Chorus</div><div class="gb"><span>D Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>D Em G</span></div><div class="gb"><span>A D</span></div></div>
+    <div class="grid"><div class="gl"></div><div class="gb"><span>Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>Em A Em</span></div><div class="gb"><span>D G</span></div></div>
+    <div class="grid"><div class="gl">Interlude</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div></div>
+    <div class="grid"><div class="gl">Verse 2</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div></div>
+
+    <h3>Chorus · Da-da · Bridge</h3>
+    <div class="grid"><div class="gl">Chorus</div><div class="gb"><span>D Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>D Em G</span></div><div class="gb"><span>A D</span></div></div>
+    <div class="grid"><div class="gl"></div><div class="gb"><span>Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>Em A Em</span></div><div class="gb"><span>D G</span></div></div>
+    <div class="grid"><div class="gl">Da-da</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div></div>
+    <div class="grid bridge"><div class="gl">Bridge</div><div class="gb"><span>Em G</span></div><div class="gb"><span>D A Em</span></div><div class="gb"><span>G</span></div></div>
+
+    <h3>Chorus (his version) · Outro</h3>
+    <div class="grid"><div class="gl">Chorus</div><div class="gb"><span>D Em</span></div><div class="gb"><span>G A D</span></div><div class="gb"><span>Em G</span></div><div class="gb"><span>A D</span></div></div>
+    <div class="grid"><div class="gl"></div><div class="gb"><span>Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>Em A Em</span></div><div class="gb"><span>D G</span></div></div>
+    <div class="grid"><div class="gl">Outro</div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D</span><span>Em</span><span>G</span><span>A</span></div><div class="gb"><span>D Em</span></div><div class="gb"><span>G A</span></div></div>
+    <div class="grid"><div class="gl"></div><div class="gb"><span>D Em</span></div><div class="gb"><span>G A</span></div><div class="gb"><span>D Em</span></div><div class="gb"><span>G</span></div></div>
+
+    <p class="note">Chord positions come from the chart. Lines with two or three chords share a bar; the chorus rows follow the lyric lines rather than a strict bar count.</p>
+  </section>
+</main>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Superstition – Song Form</title>
+<style>
+:root { --bg:#e9efe6; --ink:#16241a; --muted:#566a5b; --edge:#c4d1c1; --accent:#2f7d4f; }
+@media (prefers-color-scheme: dark) { :root { --bg:#101a13; --ink:#e6efe3; --muted:#93a79a; --edge:#2a3b2f; --accent:#6fbf8a; } }
+body { margin:0; background:var(--bg); color:var(--ink); font-family:"Trebuchet MS","Segoe UI",Helvetica,Arial,sans-serif; line-height:1.5; }
+main { max-width:1040px; margin:0 auto; padding:24px 16px 48px; }
+h1 { margin:0; font-size:clamp(1.8rem,5vw,2.6rem); letter-spacing:-0.01em; }
+.sub { margin:2px 0 18px; color:var(--muted); }
+.songform { padding:22px 20px; border:1px solid var(--edge); border-radius:4px; }
+h2 { margin:0 0 4px; font-size:1.5rem; } h3 { margin:26px 0 8px; font-size:1.05rem; }
+.sf-meta { margin:0; color:var(--muted); font-size:.85rem; }
+.sf-summary { margin:14px 0; font-size:1.1rem; font-weight:700; }
+.sf-facts { margin:0 0 14px; padding-left:1.1em; font-size:.92rem; } .sf-facts li { margin:4px 0; }
+.line { display:grid; grid-template-columns:120px 1fr; gap:12px; padding:7px 0; border-bottom:1px solid var(--edge); align-items:baseline; }
+.line .chord { font-weight:700; color:var(--accent); font-size:.95rem; }
+.line .lyric { font-size:.98rem; }
+.line.bar .chord { color:var(--ink); }
+.label { font-size:.8rem; color:var(--muted); text-transform:uppercase; letter-spacing:.06em; margin-top:4px; }
+@media (max-width:600px) { .line { grid-template-columns:1fr; gap:2px; } }
+.note { color:var(--muted); font-size:.85rem; margin:14px 4px 0; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Superstition</h1>
+  <p class="sub">Stevie Wonder · tuned half step down · riff-based, Riff 1 throughout</p>
+  <section class="songform" id="song-form">
+    <h2>Song Form</h2>
+    <p class="sf-meta">Source: tab and lyric chart. “Riff 1” is the riff in the tab at the top of the chart.</p>
+    <p class="sf-summary">Intro 4× Riff 1 – Verse 1 – Verse 2 – Instrumental – Verse 3 – Outro (Riff 1, fade)</p>
+    <ul class="sf-facts">
+      <li><b>Riff 1</b> The same riff sits under almost the whole song. Each verse line is played as Riff 1 ×2.</li>
+      <li><b>Bridge line</b> “When you believe…” moves over A♯7 – B7 – A♯7 – A7, then G♯7 – A♯7 (N.C.), then Riff 1 ×2.</li>
+      <li><b>Instrumental</b> A♯7 – B7 – A♯7 – A7 – G♯7 – A♯7, then Riff 1 ×2, with “Ahhhhhh” over the top.</li>
+    </ul>
+
+    <h3>Intro</h3>
+    <div class="line"><span class="chord">Riff 1 ×4</span><span class="lyric"></span></div>
+
+    <h3>Verse 1</h3>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Very superstitious, writin's on the wall</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Very superstitious, ladders 'bout to fall</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Thirteen month old baby, broke the lookin' glass</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Seven years of bad luck, the good things in your past</span></div>
+    <div class="line bar"><span class="chord">A♯7 B7 A♯7 A7</span><span class="lyric">When you believe in things that you don't understand</span></div>
+    <div class="line bar"><span class="chord">G♯7 A♯7 N.C. Riff 1 ×2</span><span class="lyric">Then you suffer, superstition ain't the way</span></div>
+
+    <h3>Verse 2</h3>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Very superstitious, wash your face and hands</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Rid me of the problem, do all that you can</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Keep me in a daydream, keep me goin' strong</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">You don't wanna save me, sad is my song</span></div>
+    <div class="line bar"><span class="chord">A♯7 B7 A♯7 A7</span><span class="lyric">When you believe in things that you don't understand</span></div>
+    <div class="line bar"><span class="chord">G♯7 A♯7 N.C. Riff 1 ×2</span><span class="lyric">Then you suffer, superstition ain't the way</span></div>
+
+    <h3>Instrumental</h3>
+    <div class="line bar"><span class="chord">A♯7 B7 A♯7 A7 G♯7 A♯7 Riff 1 ×2</span><span class="lyric">Ahhhhhhhhhhh</span></div>
+
+    <h3>Verse 3</h3>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Very superstitious, nothin' more to say</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Very superstitious, the devil's on his way</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Thirteen month old baby, broke the lookin' glass</span></div>
+    <div class="line"><span class="chord">Riff 1 ×2</span><span class="lyric">Seven years of bad luck, good things in your past</span></div>
+    <div class="line bar"><span class="chord">A♯7 B7 A♯7 A7</span><span class="lyric">When you believe in things that you don't understand</span></div>
+    <div class="line bar"><span class="chord">G♯7 A♯7 N.C. Riff 1 ×2</span><span class="lyric">Then you suffer, superstition ain't the way, no no no</span></div>
+
+    <h3>Outro</h3>
+    <div class="line"><span class="chord">Riff 1, repeat and fade</span><span class="lyric"></span></div>
+
+    <p class="note">Chord symbols and “Riff 1” counts follow the chart. Riff 1 has no bar count on the chart, so the repeats are shown as written.</p>
+  </section>
+</main>
+</body>
+</html>
